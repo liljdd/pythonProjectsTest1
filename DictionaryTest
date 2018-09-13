@@ -1,0 +1,48 @@
+dict1 = {'abc': 456, True: 123, 321: False};
+dict2 = {'abc': 123, 98.6: 37};
+print(dict1)
+print(dict1['abc'], dict1[True])
+# print(dict1['abcd'])  # KeyError: 'abcd'
+dict1['abc'] = 'defg'
+print(dict1)
+print('--------------')
+print(len(dict1))
+s = str(dict1)
+print(s, type(s))  # {'abc': 'defg', True: 123, 321: False} <class 'str'>
+
+print(dict1.get('abc'))
+
+dict3 = {'user': 'royal', 'num': [1, 2, 'YYYY']}
+dict4 = dict3
+dict5 = dict3.copy()  # 深拷贝父对象（一级目录），子对象（二级目录）不拷贝，还是引用
+print(dict3, dict4, dict5)
+dict3['user'] = 'RNG'
+dict3['num'][1] = 'xxx'
+dict3['num'].remove('YYYY')
+print(dict3)
+print(dict4)
+print(dict5)
+print('---------------')
+seq = ('name', 'age', 'sex')
+
+dict = dict.fromkeys(seq)
+print("新的字典为 : %s" % str(dict))
+
+dict = dict.fromkeys(seq, 10)
+print("新的字典为 : %s" % str(dict))
+
+if 'Age' in dict:
+    print("键 Age 存在")
+else:
+    print("键 Age 不存在")
+print('-----------')
+print(dict1)  # {'abc': 'defg', True: 123, 321: False}
+l = dict1.items()
+print(l, type(l))  # dict_items([('abc', 'defg'), (True, 123), (321, False)]) <class 'dict_items'>
+ll = list(l)
+print(ll)
+print('------')
+l2 = dict1.keys()
+print(l2, type(l2))  # dict_keys(['abc', True, 321]) <class 'dict_keys'>
+ll2=list(l2)
+print(ll2)
