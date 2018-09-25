@@ -25,3 +25,6 @@ print(list1)
 aList = ['Google', 'Runoob', 'Taobao', 'Facebook']
 aList.sort()
 print(aList)
+
+for i in range(0,len(aList)):
+    print(i,aList[i])

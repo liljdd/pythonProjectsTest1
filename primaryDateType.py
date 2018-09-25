@@ -89,6 +89,12 @@ print(a-b)  # a和b的差集 {'c', 'b', 'a'}
 print(a|b)  # a和b的并集 {'h', 'd', 'e', 'c', 'a', 'i', 'b', 'g', 'f'}
 print(a&b)  # a和b的交集 {'f', 'e', 'd'}
 print(a^b)  # a和b中不同时存在的元素 {'b', 'a', 'i', 'h', 'g', 'c'}
+print('*********************************************')
+print(a.difference(b))   # a和b的差集，不改变a  {'c', 'a', 'b'}
+print(a)    # {'f', 'a', 'c', 'd', 'e', 'b'}
+print(a.difference_update(b))   # a和b的差集，改变a  None
+print(a)    # {'a', 'c', 'b'}
+
 
 del student,a,b
 print()
@@ -109,17 +115,23 @@ print(tinydict)  # 输出完整的字典
 print(tinydict.keys())  # 输出所有键
 print(tinydict.values())  # 输出所有值
 
-del dict,tinydict
-
 print('=========================')
-def a():
-    '''这是文档字符串'''
+keys = tinydict.keys();
+print(keys,type(keys))
+for i in range(0,len(keys)):
+    print(i)    # keys[i] 报错
+
+for i in keys:
+    print(tinydict[i])
     pass
+ # del dict,tinydict
+
+def a():
+    '''
+    这是文档字符串
+    print(tinydict)
+    '''
+    pass    # pass 不做任何事情，一般用做占位语句
+
+
 print(a.__doc__)
-
-
-
-
-
-
-
