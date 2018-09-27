@@ -1,3 +1,5 @@
+import fibo
+
 i = 10
 print(i)
 a = " wo shi  shui\n "
@@ -15,3 +17,5 @@ a, b = 0, 1
 while b < 100:
     print(b, end=',')
     a, b = b, a + b
+
+fibo.fibo1(100)
